@@ -8,7 +8,8 @@ body {
     * The below code will make the flex-items lay down to left to right, Also you can check the border of the container take 100% (like a block level element).
    */
   display: flex;
-  /* height: 400px; */
+  height: 400px;
+  flex-wrap: wrap;
 
   /**
     * If you don't want a block level flex container, you set the display property to the inline flex, Check the below code for the reference.
@@ -78,20 +79,75 @@ body {
   /**
     * justify-content: space-between : The extra space that was left out is evenly split through the flex items (main axis)
   */
-  justify-content: space-between;
+  /* justify-content: space-between; */
 
   /**
     * justify-content: space-around : The extra space that was left out is evenly split through the left and right side of the flex items (main axis)
     * Note: Sometime you also want space before and after the first and last flex-item, in such scenario this will be used.
   */
-  justify-content: space-around;
+  /* justify-content: space-around; */
 
   /**
     * justify-content: space-evenly : The extra space that was left out is evenly split through the all side of the flex items (main axis)
 
     * Note: Sometime you want exact space between flex-item, in such scenario this will be used.
   */
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
+
+  /**
+    * justify-content: space-between : The extra space that was left out is evenly split through the flex items (main axis)
+  */
+  /* align-items: stretch; */
+
+  /**
+    * justify-content: space-between : The extra space that was left out is evenly split through the flex items (main axis)
+  */
+  /* align-items: flex-start; */
+
+  /**
+    * justify-content: space-between : The extra space that was left out is evenly split through the flex items (main axis)
+  */
+  /* align-items: flex-end; */
+
+  /**
+    * justify-content: space-between : The extra space that was left out is evenly split through the flex items (main axis)
+  */
+  /* align-items: center; */
+
+  /**
+    * justify-content: space-between : The extra space that was left out is evenly split through the flex items (main axis)
+  */
+  /* align-items: baseline; */
+
+  /**
+    * align-content: stretch : This is the default property. And flex-item will move to next line when there isn't enough space for them.
+  */
+  /* align-content: stretch; */
+
+  /**
+    * align-content: flex-start : Lines are packed toward the start of the flex container
+  */
+  /* align-content: flex-start; */
+
+  /**
+    * align-content: flex-end : Lines are packed toward the end of the flex container
+  */
+  /* align-content: flex-end; */
+
+  /**
+    * align-content: center : Lines are packed toward the center of the flex container
+  */
+  /* align-content: center; */
+
+  /**
+    * align-content: space-between : All the space is in-between the two lines (Lines are evenly distributed in the flex container).
+  */
+  /* align-content: space-between; */
+
+  /**
+    * align-content: space-around : All the space are evenly spread around the two lines (Lines are evenly distributed in the flex container, with half-size spaces on either end).
+  */
+  /* align-content: space-around; */
 }
 
 .flex-item {
