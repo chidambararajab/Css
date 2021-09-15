@@ -34,6 +34,21 @@ body {
     * flex-direction: row-reverse flex direction row-reverse will set the Main axis to right to left.
   */
   /* flex-direction: column-reverse; */
+
+  /**
+    * flex-wrap: which is default wraping.
+  */
+  /* flex-wrap: nowrap; */
+
+  /**
+    * flex-wrap: wrap : wrap will move the items to the bottom new line when there is not enough space.
+  */
+  /* flex-wrap: wrap; */
+
+  /**
+    * flex-wrap: wrap-reverse : wrap-reverse will move the items to the top line when there is not enough space instead of moving them in bottom line
+  */
+  flex-wrap: wrap-reverse;
 }
 
 .flex-item {
