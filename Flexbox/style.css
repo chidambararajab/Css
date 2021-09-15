@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+}
+
+.container {
+  border: 6px solid black;
+  /**
+    * The below code will make the flex-items lay down to left to right, Also you can check the border of the container take 100% (like a block level element).
+   */
+  display: flex;
+
+  /**
+    * If you don't want a block level flex container, you set the display property to the inline flex, Check the below code for the reference.
+  */
+  /* display: inline-flex; */
+}
+
+.flex-item {
+  color: white;
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.item-1 {
+  background-color: #b4bf35;
+}
+.item-2 {
+  background-color: #bf8335;
+}
+.item-3 {
+  background-color: #355abf;
+}
+.item-4 {
+  background-color: #e9ec4c;
+}
+.item-5 {
+  background-color: #5f0606;
+}
+.item-6 {
+  background-color: #3575bf;
+}
+.item-7 {
+  background-color: #f1d142;
+}
+.item-8 {
+  background-color: #31c9e4;
+}
+.item-9 {
+  background-color: #63c23e;
+}
