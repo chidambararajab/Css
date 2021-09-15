@@ -8,11 +8,32 @@ body {
     * The below code will make the flex-items lay down to left to right, Also you can check the border of the container take 100% (like a block level element).
    */
   display: flex;
+  height: 400px;
 
   /**
     * If you don't want a block level flex container, you set the display property to the inline flex, Check the below code for the reference.
   */
   /* display: inline-flex; */
+
+  /**
+    * flex-direction: row : flex direction row is the default property and it set the Main axis to left to right.
+  */
+  /* flex-direction: row; */
+
+  /**
+    * flex-direction: row-reverse flex direction row-reverse will set the Main axis to right to left.
+  */
+  /* flex-direction: row-reverse; */
+
+  /**
+    * flex-direction: column : when you set flex direction to column. The main access flows from top to bottom. So the items are now stacked on top of each other.
+  */
+  flex-direction: column;
+
+  /**
+    * flex-direction: row-reverse flex direction row-reverse will set the Main axis to right to left.
+  */
+  /* flex-direction: column-reverse; */
 }
 
 .flex-item {
