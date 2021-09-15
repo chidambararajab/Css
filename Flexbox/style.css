@@ -48,7 +48,17 @@ body {
   /**
     * flex-wrap: wrap-reverse : wrap-reverse will move the items to the top line when there is not enough space instead of moving them in bottom line
   */
-  flex-wrap: wrap-reverse;
+  /* flex-wrap: wrap-reverse; */
+
+  /**
+    * flex-wrap: wrap-reverse : wrap-reverse will move the items to the top line when there is not enough space instead of moving them in bottom line
+  */
+  /* flex-flow: row wrap; */
+
+  /**
+    * flex-wrap: wrap-reverse : wrap-reverse will move the items to the top line when there is not enough space instead of moving them in bottom line
+  */
+  flex-flow: column wrap-reverse;
 }
 
 .flex-item {
