@@ -8,7 +8,7 @@ body {
     * The below code will make the flex-items lay down to left to right, Also you can check the border of the container take 100% (like a block level element).
    */
   display: flex;
-  height: 400px;
+  /* height: 400px; */
 
   /**
     * If you don't want a block level flex container, you set the display property to the inline flex, Check the below code for the reference.
@@ -28,7 +28,7 @@ body {
   /**
     * flex-direction: column : when you set flex direction to column. The main access flows from top to bottom. So the items are now stacked on top of each other.
   */
-  flex-direction: column;
+  /* flex-direction: column; */
 
   /**
     * flex-direction: row-reverse flex direction row-reverse will set the Main axis to right to left.
@@ -51,14 +51,47 @@ body {
   /* flex-wrap: wrap-reverse; */
 
   /**
-    * flex-wrap: wrap-reverse : wrap-reverse will move the items to the top line when there is not enough space instead of moving them in bottom line
+    * flex-flow: <flex-direction> <flex-wrap>
   */
   /* flex-flow: row wrap; */
 
   /**
-    * flex-wrap: wrap-reverse : wrap-reverse will move the items to the top line when there is not enough space instead of moving them in bottom line
+    * flex-flow: <flex-direction> <flex-wrap>
   */
-  flex-flow: column wrap-reverse;
+  /* flex-flow: column wrap-reverse; */
+
+  /**
+    * justify-content: flex-start : flex items will pushed to the start of main axis of the current line of the flex container (without any spaces between the container)
+  */
+  /* justify-content: flex-stat; */
+
+  /**
+    * justify-content: flex-end : flex items will pushed to the end of main axis of the current line of the flex container (without any spaces between the container and the Item order will never change)
+  */
+  /* justify-content: flex-end; */
+
+  /**
+    * justify-content: center : flex items will pushed to the center of main axis of the current line of the flex container (without any spaces between the container)
+  */
+  /* justify-content: center; */
+
+  /**
+    * justify-content: space-between : The extra space that was left out is evenly split through the flex items (main axis)
+  */
+  justify-content: space-between;
+
+  /**
+    * justify-content: space-around : The extra space that was left out is evenly split through the left and right side of the flex items (main axis)
+    * Note: Sometime you also want space before and after the first and last flex-item, in such scenario this will be used.
+  */
+  justify-content: space-around;
+
+  /**
+    * justify-content: space-evenly : The extra space that was left out is evenly split through the all side of the flex items (main axis)
+
+    * Note: Sometime you want exact space between flex-item, in such scenario this will be used.
+  */
+  justify-content: space-evenly;
 }
 
 .flex-item {
