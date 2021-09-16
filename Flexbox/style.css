@@ -3,7 +3,7 @@ body {
 }
 
 .container {
-  border: 6px solid black;
+  border: 6px solid #070707;
   /**
     * The below code will make the flex-items lay down to left to right, Also you can check the border of the container take 100% (like a block level element).
    */
