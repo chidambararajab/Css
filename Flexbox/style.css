@@ -9,7 +9,6 @@ body {
    */
   display: flex;
   height: 400px;
-  flex-wrap: wrap;
 
   /**
     * If you don't want a block level flex container, you set the display property to the inline flex, Check the below code for the reference.
