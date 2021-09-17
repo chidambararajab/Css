@@ -1,0 +1,263 @@
+/*
+COLORS:
+
+Light skyblue: #CCFFFF
+Medium skyblue: #B2FFFF
+Dark skyblue: #80CCCC
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+
+  /**
+    * Box model change to the border-box, so that the borders and the paddings are no longer addedto the total width or the total height
+  */
+  box-sizing: border-box;
+}
+
+body {
+  /**
+    * Properties relitaed to font usually inherited. Thats the reason we are declaring the font in body
+  */
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  /**
+    * 1.7 in line-height means, It will 1.7 times bigger then the pre-defined line-hight
+    * (pre-defined line hight * 1.7)
+  */
+  line-height: 1.7;
+  color: #f7f7f7;
+  padding: 30px;
+}
+
+.header {
+  /**
+    * linear-gradient will give the color top of the image or bacside of the image(depends on it defined in fist or last).
+    * We can reduce the opasity of the color to giv ethe shade and provide in which side the color goes like 'to right left', 'to right bottom'
+  */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(204, 255, 255, 0.7),
+      rgba(128, 204, 204, 0.7)
+    ),
+    url("../img/hero.jpg");
+  height: 95vh;
+  /**
+    * Specifies the size of the background images.
+    * what background-size: cover does is that whatever the width of the viewport, or the element, it'll always try to fit the element inside of the box.
+  */
+  background-size: cover;
+  /**
+    * Specifies the initial position of the background image(s) (after any resizing) within their corresponding background positioning area
+    * what background-position: top does is the top of the image will always stick, when the browser size is shrinked. we can shange the position to bottom, left, right, center, top as well.
+  */
+  background-position: top;
+  /**
+    * clip-path will helps to add the shape or crop the display image or background using the x y corordinates
+    * Syntax: clip-path: polygon(leftTop(x y), leftBottom(x y), rightBottom(x y), rightTop(x y))
+    * Note: you can add more and more check points, the checkpoints will go clock wise.
+    * Use this generate the clip-paths: polygon https://bennettfeely.com/clippy/
+  */
+  clip-path: polygon(0 0, 100% 0%, 100% 75%, 0% 100%);
+  position: relative;
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 35px;
+}
+
+.logo:hover {
+  animation: moveInRight 1.5s ease-in;
+}
+
+.heading-primary {
+  text-transform: uppercase;
+
+  /**
+    * It will remove the little shake(glitch and m ove sto top little bit) from the animation(keyframes)
+    * Determines whether or not the 'back' side of a transformed element is visible when facing the viewer. With an identity transform, the front side of an element faces the viewer.
+  */
+  backface-visibility: hidden;
+  margin-bottom: 60px;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+  animation-name: moveInLeft;
+  animation-duration: 1.5s;
+
+  /**
+    * animation-timing-function: Describes how the animation will progress over one cycle of its duration.
+    * we have ease-in, ease-out, ease-in-out, ease and custom timing for ease in and ese out using cubic-bezier().
+  */
+  animation-timing-function: ease-in;
+
+  /**
+    * animation-delay will delay the annimation mention in its section for the mentoned time.(Defines when the animation will start)
+  */
+  /* animation-delay: 3s; */
+
+  /**
+    * animation-iteration-count set to 3 means the animation in its section will re-do the animation for the mention number of times.
+    * Defines the number of times an animation cycle is played. The default value is one, meaning the animation will play from beginning to end once.
+  */
+  /* animation-iteration-count: 3; */
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 30px;
+  /**
+    * Shorthand property combines six of the animation properties into a single property.
+    * animation: name duration timing-function delay iteration-count direction fill-mode;
+  */
+  animation: moveInRight 1.5s ease-in;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  80% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/**
+  * Reason why we style bot link and visited link: if we don't style a link at all, it will appear blue in the beginning and then once we click on it once, when we see it again, then it will be purple.
+*/
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 60px;
+  /**
+    * Compared to display: inline, the major difference is that display: inline-block allows to set a width and height on the element. Also, with display: inline-block, the top and bottom margins/paddings are respected, but with display: inline they are not.
+    * Compared to display: block, the major difference is that display: inline-block does not add a line-break after the element, so the element can sit next to other elements.
+  */
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.btn-white {
+  color: #070707;
+  background-color: #f7f7f7;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  /**
+    * Simply provide the shadow to the specified element.
+    * offset-x | offset-y | blur-radius | color(with-less-opasity-is-preffered) 
+  */
+  box-shadow: 0px 10px 20px rgba(8, 8, 8, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0px 5px 10px rgba(8, 8, 8, 0.2);
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /**
+    * For a positioned box, the 'z-index' property specifies the stack level of the box in the current stacking context and whether the box establishes a local stacking context.
+  */
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #f7f7f7;
+}
+
+.btn:hover::after {
+  /**
+    * transform: scale(2) : scale will increese the size of the element(to presise the background) with the mentioned number provided inside the scale. in this case its twice the element size.
+  */
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  /**
+    * Shorthand property combines six of the animation properties into a single property.
+    * animation: name duration timing-function delay iteration-count direction fill-mode;
+  */
+  animation: moveInBottom 1.5s ease-in 0.75s;
+  /**
+    * animation-fill-mode: backwards will simply set the 0% animation of that element from the start. So the element will not be visible when it has to be visible only after mentioned secponds(which defined in animation property)
+    * Defines what values are applied by the animation outside the time it is executing.
+  */
+  animation-fill-mode: backwards;
+}
