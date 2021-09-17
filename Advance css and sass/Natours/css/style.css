@@ -7,30 +7,47 @@ Dark skyblue: #80CCCC
 
 */
 
-* {
+/**
+  * Selecting the after and before sudo elements with the global(*) selector is the best practice.
+*/
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-
   /**
     * Box model change to the border-box, so that the borders and the paddings are no longer addedto the total width or the total height
+    * By setting box-sizing property to inherit, I am doing the inheritance for everyelemnt for thr box-sizing by providing the box-sizing value in "body tag".
   */
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
+html {
+  /**
+    * Providing px values are wronmg and it can be sometime pain when browser size changed, so what we can do here. we can get the browser default value(px) and the value we want to assign(in this case 10px) and divide them and add them as  percentage (%) in font-size value.
+    * (our-providing-font-value / browser-default-font-value(px))*100 = some percent-value
+    * eg: (10/16)*100 = 62.5
+    * Note: rem is not supported in older version if Internet Explorer.
+  */
+  font-size: 62.5%;
+}
 body {
   /**
     * Properties relitaed to font usually inherited. Thats the reason we are declaring the font in body
   */
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
   /**
     * 1.7 in line-height means, It will 1.7 times bigger then the pre-defined line-hight
     * (pre-defined line hight * 1.7)
   */
   line-height: 1.7;
   color: #f7f7f7;
-  padding: 30px;
+  padding: 3rem;
+  /**
+    * Box model change to the border-box, so that the borders and the paddings are no longer addedto the total width or the total height
+  */
+  box-sizing: border-box;
 }
 
 .header {
@@ -67,12 +84,12 @@ body {
 
 .logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 .logo {
-  height: 35px;
+  height: 3.5rem;
 }
 
 .logo:hover {
@@ -87,14 +104,14 @@ body {
     * Determines whether or not the 'back' side of a transformed element is visible when facing the viewer. With an identity transform, the front side of an element faces the viewer.
   */
   backface-visibility: hidden;
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 .heading-primary-main {
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
   animation-name: moveInLeft;
   animation-duration: 1.5s;
 
@@ -118,9 +135,9 @@ body {
 
 .heading-primary-sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 30px;
+  letter-spacing: 3rem;
   /**
     * Shorthand property combines six of the animation properties into a single property.
     * animation: name duration timing-function delay iteration-count direction fill-mode;
@@ -139,11 +156,11 @@ body {
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
 
   80% {
-    transform: translateX(10px);
+    transform: translateX(1rem);
   }
 
   100% {
@@ -155,11 +172,11 @@ body {
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(10rem);
   }
 
   80% {
-    transform: translateX(-10px);
+    transform: translateX(-1rem);
   }
 
   100% {
@@ -171,11 +188,11 @@ body {
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(3rem);
   }
 
   80% {
-    transform: translateY(-10px);
+    transform: translateY(-1rem);
   }
 
   100% {
@@ -191,13 +208,14 @@ body {
 .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 60px;
+  padding: 1.5rem 6rem;
   /**
     * Compared to display: inline, the major difference is that display: inline-block allows to set a width and height on the element. Also, with display: inline-block, the top and bottom margins/paddings are respected, but with display: inline they are not.
     * Compared to display: block, the major difference is that display: inline-block does not add a line-break after the element, so the element can sit next to other elements.
   */
   display: inline-block;
-  border-radius: 100px;
+  font-size: 1.4rem;
+  border-radius: 10rem;
   transition: all 0.2s;
   position: relative;
 }
@@ -208,17 +226,17 @@ body {
 }
 
 .btn:hover {
-  transform: translateY(-3px);
+  transform: translateY(-0.3rem);
   /**
     * Simply provide the shadow to the specified element.
     * offset-x | offset-y | blur-radius | color(with-less-opasity-is-preffered) 
   */
-  box-shadow: 0px 10px 20px rgba(8, 8, 8, 0.2);
+  box-shadow: 0px 1rem 2rem rgba(8, 8, 8, 0.2);
 }
 
 .btn:active {
-  transform: translateY(-1px);
-  box-shadow: 0px 5px 10px rgba(8, 8, 8, 0.2);
+  transform: translateY(-0.1rem);
+  box-shadow: 0px 0.5rem 1rem rgba(8, 8, 8, 0.2);
 }
 
 .btn::after {
