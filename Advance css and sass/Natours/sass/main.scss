@@ -10,6 +10,15 @@ $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
 
 */
+
+// variables colors
+$color-primary: #ccffff;
+$color-primary-light: #b2ffff;
+$color-primary-dark: #80cccc;
+
+$color-primary-white: #f7f7f7;
+$color-primary-black: #070707;
+
 /**
   * Selecting the after and before sudo elements with the global(*) selector is the best practice.
 */
@@ -22,7 +31,8 @@ $color-primary-dark: #28b485;
     * Box model change to the border-box, so that the borders and the paddings are no longer addedto the total width or the total height
     * By setting box-sizing property to inherit, I am doing the inheritance for everyelemnt for thr box-sizing by providing the box-sizing value in "body tag".
   */
-  box-sizing: inherit; }
+  box-sizing: inherit;
+}
 
 html {
   /**
@@ -31,7 +41,8 @@ html {
     * eg: (10/16)*100 = 62.5
     * Note: rem is not supported in older version if Internet Explorer.
   */
-  font-size: 62.5%; }
+  font-size: 62.5%;
+}
 
 body {
   /**
@@ -44,19 +55,25 @@ body {
     * (pre-defined line hight * 1.7)
   */
   line-height: 1.7;
-  color: #f7f7f7;
+  color: $color-primary-white;
   padding: 3rem;
   /**
     * Box model change to the border-box, so that the borders and the paddings are no longer addedto the total width or the total height
   */
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .header {
   /**
     * linear-gradient will give the color top of the image or bacside of the image(depends on it defined in fist or last).
     * We can reduce the opasity of the color to giv ethe shade and provide in which side the color goes like 'to right left', 'to right bottom'
   */
-  background-image: linear-gradient(to right bottom, rgba(178, 255, 255, 0.5), rgba(128, 204, 204, 0.5)), url("../img/hero.jpg");
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.5),
+      rgba($color-primary-dark, 0.5)
+    ),
+    url("../img/hero.jpg");
   height: 95vh;
   /**
     * Specifies the size of the background images.
@@ -75,27 +92,33 @@ body {
     * Use this generate the clip-paths: polygon https://bennettfeely.com/clippy/
   */
   clip-path: polygon(0 0, 100% 0%, 100% 75%, 0% 100%);
-  position: relative; }
+  position: relative;
+}
 
 .header__logo-box {
   position: absolute;
   top: 4rem;
-  left: 4rem; }
+  left: 4rem;
+}
 
 .header__logo {
-  height: 3.5rem; }
+  height: 3.5rem;
+}
 
 .header__logo:hover {
-  animation: moveInRight 1.5s ease-in; }
+  animation: moveInRight 1.5s ease-in;
+}
 
 .heading-primary {
   text-transform: uppercase;
+
   /**
     * It will remove the little shake(glitch and m ove sto top little bit) from the animation(keyframes)
     * Determines whether or not the 'back' side of a transformed element is visible when facing the viewer. With an identity transform, the front side of an element faces the viewer.
   */
   backface-visibility: hidden;
-  margin-bottom: 6rem; }
+  margin-bottom: 6rem;
+}
 
 .heading-primary--main {
   display: block;
@@ -104,20 +127,24 @@ body {
   letter-spacing: 3.5rem;
   animation-name: moveInLeft;
   animation-duration: 1.5s;
+
   /**
     * animation-timing-function: Describes how the animation will progress over one cycle of its duration.
     * we have ease-in, ease-out, ease-in-out, ease and custom timing for ease in and ese out using cubic-bezier().
   */
   animation-timing-function: ease-in;
+
   /**
     * animation-delay will delay the annimation mention in its section for the mentoned time.(Defines when the animation will start)
   */
   /* animation-delay: 3s; */
+
   /**
     * animation-iteration-count set to 3 means the animation in its section will re-do the animation for the mention number of times.
     * Defines the number of times an animation cycle is played. The default value is one, meaning the animation will play from beginning to end once.
   */
-  /* animation-iteration-count: 3; */ }
+  /* animation-iteration-count: 3; */
+}
 
 .heading-primary--sub {
   display: block;
@@ -128,44 +155,64 @@ body {
     * Shorthand property combines six of the animation properties into a single property.
     * animation: name duration timing-function delay iteration-count direction fill-mode;
   */
-  animation: moveInRight 1.5s ease-in; }
+  animation: moveInRight 1.5s ease-in;
+}
 
 .header__text-box {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  text-align: center; }
+  text-align: center;
+}
 
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-10rem); }
+    transform: translateX(-10rem);
+  }
+
   80% {
-    transform: translateX(1rem); }
+    transform: translateX(1rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translateX(0);
+  }
+}
 
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(10rem); }
+    transform: translateX(10rem);
+  }
+
   80% {
-    transform: translateX(-1rem); }
+    transform: translateX(-1rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translateX(0); } }
+    transform: translateX(0);
+  }
+}
 
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(3rem); }
+    transform: translateY(3rem);
+  }
+
   80% {
-    transform: translateY(-1rem); }
+    transform: translateY(-1rem);
+  }
+
   100% {
     opacity: 1;
-    transform: translateY(0); } }
+    transform: translateY(0);
+  }
+}
 
 /**
   * Reason why we style bot link and visited link: if we don't style a link at all, it will appear blue in the beginning and then once we click on it once, when we see it again, then it will be purple.
@@ -183,11 +230,13 @@ body {
   font-size: 1.4rem;
   border-radius: 10rem;
   transition: all 0.2s;
-  position: relative; }
+  position: relative;
+}
 
 .btn--white {
-  color: #070707;
-  background-color: #f7f7f7; }
+  color: $color-primary-black;
+  background-color: $color-primary-white;
+}
 
 .btn:hover {
   transform: translateY(-0.3rem);
@@ -195,11 +244,13 @@ body {
     * Simply provide the shadow to the specified element.
     * offset-x | offset-y | blur-radius | color(with-less-opasity-is-preffered) 
   */
-  box-shadow: 0px 1rem 2rem rgba(7, 7, 7, 0.2); }
+  box-shadow: 0px 1rem 2rem rgba($color-primary-black, 0.2);
+}
 
 .btn:active {
   transform: translateY(-0.1rem);
-  box-shadow: 0px 0.5rem 1rem rgba(7, 7, 7, 0.2); }
+  box-shadow: 0px 0.5rem 1rem rgba($color-primary-black, 0.2);
+}
 
 .btn::after {
   content: "";
@@ -214,17 +265,20 @@ body {
     * For a positioned box, the 'z-index' property specifies the stack level of the box in the current stacking context and whether the box establishes a local stacking context.
   */
   z-index: -1;
-  transition: all 0.4s; }
+  transition: all 0.4s;
+}
 
 .btn--white::after {
-  background-color: #f7f7f7; }
+  background-color: $color-primary-white;
+}
 
 .btn:hover::after {
   /**
     * transform: scale(2) : scale will increese the size of the element(to presise the background) with the mentioned number provided inside the scale. in this case its twice the element size.
   */
   transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
+  opacity: 0;
+}
 
 .btn--animated {
   /**
@@ -236,4 +290,5 @@ body {
     * animation-fill-mode: backwards will simply set the 0% animation of that element from the start. So the element will not be visible when it has to be visible only after mentioned secponds(which defined in animation property)
     * Defines what values are applied by the animation outside the time it is executing.
   */
-  animation-fill-mode: backwards; }
+  animation-fill-mode: backwards;
+}
