@@ -1,0 +1,80 @@
+.btn {
+  /**
+    * Reason why we style bot link and visited link: if we don't style a link at all, it will appear blue in the beginning and then once we click on it once, when we see it again, then it will be purple.
+  */
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 6rem;
+    /**
+      * Compared to display: inline, the major difference is that display: inline-block allows to set a width and height on the element. Also, with display: inline-block, the top and bottom margins/paddings are respected, but with display: inline they are not.
+      * Compared to display: block, the major difference is that display: inline-block does not add a line-break after the element, so the element can sit next to other elements.
+    */
+    display: inline-block;
+    font-size: 1.4rem;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+  }
+
+  &--white {
+    color: $color-primary-black;
+    background-color: $color-primary-white;
+
+    &::after {
+      background-color: $color-primary-white;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-0.3rem);
+    /**
+      * Simply provide the shadow to the specified element.
+      * offset-x | offset-y | blur-radius | color(with-less-opasity-is-preffered) 
+    */
+    box-shadow: 0px 1rem 2rem rgba($color-primary-black, 0.2);
+
+    &::after {
+      /**
+        * transform: scale(2) : scale will increese the size of the element(to presise the background) with the mentioned number provided inside the scale. in this case its twice the element size.
+      */
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0px 0.5rem 1rem rgba($color-primary-black, 0.2);
+  }
+
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /**
+      * For a positioned box, the 'z-index' property specifies the stack level of the box in the current stacking context and whether the box establishes a local stacking context.
+    */
+    z-index: -1;
+    transition: all 0.4s;
+  }
+
+  &--animated {
+    /**
+      * Shorthand property combines six of the animation properties into a single property.
+      * animation: name duration timing-function delay iteration-count direction fill-mode;
+    */
+    animation: moveInBottom 1.5s ease-in 0.75s;
+    /**
+      * animation-fill-mode: backwards will simply set the 0% animation of that element from the start. So the element will not be visible when it has to be visible only after mentioned secponds(which defined in animation property)
+      * Defines what values are applied by the animation outside the time it is executing.
+    */
+    animation-fill-mode: backwards;
+  }
+}

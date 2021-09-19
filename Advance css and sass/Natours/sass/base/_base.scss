@@ -1,0 +1,43 @@
+/**
+  * Selecting the after and before sudo elements with the global(*) selector is the best practice.
+*/
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  /**
+    * Box model change to the border-box, so that the borders and the paddings are no longer addedto the total width or the total height
+    * By setting box-sizing property to inherit, I am doing the inheritance for everyelemnt for thr box-sizing by providing the box-sizing value in "body tag".
+  */
+  box-sizing: inherit;
+}
+
+html {
+  /**
+    * Providing px values are wronmg and it can be sometime pain when browser size changed, so what we can do here. we can get the browser default value(px) and the value we want to assign(in this case 10px) and divide them and add them as  percentage (%) in font-size value.
+    * (our-providing-font-value / browser-default-font-value(px))*100 = some percent-value
+    * eg: (10/16)*100 = 62.5
+    * Note: rem is not supported in older version if Internet Explorer.
+  */
+  font-size: 62.5%;
+}
+
+body {
+  /**
+    * Properties relitaed to font usually inherited. Thats the reason we are declaring the font in body
+  */
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /**
+    * 1.7 in line-height means, It will 1.7 times bigger then the pre-defined line-hight
+    * (pre-defined line hight * 1.7)
+  */
+  line-height: 1.7;
+  color: $color-primary-white;
+  padding: 3rem;
+  /**
+    * Box model change to the border-box, so that the borders and the paddings are no longer addedto the total width or the total height
+  */
+  box-sizing: border-box;
+}
