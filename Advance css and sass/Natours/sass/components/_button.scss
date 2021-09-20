@@ -12,7 +12,7 @@
       * Compared to display: block, the major difference is that display: inline-block does not add a line-break after the element, so the element can sit next to other elements.
     */
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: $default-font-size;
     border-radius: 10rem;
     transition: all 0.2s;
     position: relative;
@@ -76,5 +76,30 @@
       * Defines what values are applied by the animation outside the time it is executing.
     */
     animation-fill-mode: backwards;
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-primary-white;
+    box-shadow: 0 1rem 2rem rgba($color-primary-black, 0.2);
+    transform: translateY(-2px);
+    transition: all 0.2s;
+  }
+
+  &:active {
+    box-shadow: 0 1rem 2rem rgba($color-primary-black, 0.2);
+    transform: translateY(0);
   }
 }

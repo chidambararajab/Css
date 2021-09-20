@@ -14,9 +14,17 @@ $color-primary-dark: #28b485;
 */
 
 // variables colors
-$color-primary: #ccffff;
-$color-primary-light: #b2ffff;
-$color-primary-dark: #80cccc;
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
 
 $color-primary-white: #f7f7f7;
 $color-primary-black: #070707;
+
+// Font sizes
+$default-font-size: 1.6rem;
+
+// Grid variables
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-horizontal: 6rem;

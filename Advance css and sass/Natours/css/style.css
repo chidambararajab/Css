@@ -15,44 +15,32 @@ $color-primary-dark: #28b485;
 @keyframes moveInLeft {
   0% {
     opacity: 0;
-    transform: translateX(-10rem);
-  }
+    transform: translateX(-10rem); }
   80% {
-    transform: translateX(1rem);
-  }
+    transform: translateX(1rem); }
   100% {
     opacity: 1;
-    transform: translateX(0);
-  }
-}
+    transform: translateX(0); } }
 
 @keyframes moveInRight {
   0% {
     opacity: 0;
-    transform: translateX(10rem);
-  }
+    transform: translateX(10rem); }
   80% {
-    transform: translateX(-1rem);
-  }
+    transform: translateX(-1rem); }
   100% {
     opacity: 1;
-    transform: translateX(0);
-  }
-}
+    transform: translateX(0); } }
 
 @keyframes moveInBottom {
   0% {
     opacity: 0;
-    transform: translateY(3rem);
-  }
+    transform: translateY(3rem); }
   80% {
-    transform: translateY(-1rem);
-  }
+    transform: translateY(-1rem); }
   100% {
     opacity: 1;
-    transform: translateY(0);
-  }
-}
+    transform: translateY(0); } }
 
 /**
   * Selecting the after and before sudo elements with the global(*) selector is the best practice.
@@ -66,8 +54,7 @@ $color-primary-dark: #28b485;
     * Box model change to the border-box, so that the borders and the paddings are no longer addedto the total width or the total height
     * By setting box-sizing property to inherit, I am doing the inheritance for everyelemnt for thr box-sizing by providing the box-sizing value in "body tag".
   */
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 html {
   /**
@@ -76,8 +63,7 @@ html {
     * eg: (10/16)*100 = 62.5
     * Note: rem is not supported in older version if Internet Explorer.
   */
-  font-size: 62.5%;
-}
+  font-size: 62.5%; }
 
 body {
   /**
@@ -95,8 +81,7 @@ body {
   /**
     * Box model change to the border-box, so that the borders and the paddings are no longer addedto the total width or the total height
   */
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 .heading-primary {
   text-transform: uppercase;
@@ -105,128 +90,242 @@ body {
       * Determines whether or not the 'back' side of a transformed element is visible when facing the viewer. With an identity transform, the front side of an element faces the viewer.
     */
   backface-visibility: hidden;
-  margin-bottom: 6rem;
-}
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 1.5s;
-  /**
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1.5s;
+    /**
       * animation-timing-function: Describes how the animation will progress over one cycle of its duration.
       * we have ease-in, ease-out, ease-in-out, ease and custom timing for ease in and ese out using cubic-bezier().
     */
-  animation-timing-function: ease-in;
-  /**
+    animation-timing-function: ease-in;
+    /**
       * animation-delay will delay the annimation mention in its section for the mentoned time.(Defines when the animation will start)
     */
-  /* animation-delay: 3s; */
-  /**
+    /* animation-delay: 3s; */
+    /**
       * animation-iteration-count set to 3 means the animation in its section will re-do the animation for the mention number of times.
       * Defines the number of times an animation cycle is played. The default value is one, meaning the animation will play from beginning to end once.
     */
-  /* animation-iteration-count: 3; */
-}
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 3rem;
-  /**
+    /* animation-iteration-count: 3; */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 3rem;
+    /**
       * Shorthand property combines six of the animation properties into a single property.
       * animation: name duration timing-function delay iteration-count direction fill-mode;
     */
-  animation: moveInRight 1.5s ease-in;
-}
+    animation: moveInRight 1.5s ease-in; }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  display: inline-block;
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.2s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(7, 7, 7, 0.2); }
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-8 {
+  margin-bottom: 8rem; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
 
 .btn {
   /**
     * Reason why we style bot link and visited link: if we don't style a link at all, it will appear blue in the beginning and then once we click on it once, when we see it again, then it will be purple.
-  */
-}
-.btn:link,
-.btn:visited {
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1.5rem 6rem;
-  /**
+  */ }
+  .btn:link, .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1.5rem 6rem;
+    /**
       * Compared to display: inline, the major difference is that display: inline-block allows to set a width and height on the element. Also, with display: inline-block, the top and bottom margins/paddings are respected, but with display: inline they are not.
       * Compared to display: block, the major difference is that display: inline-block does not add a line-break after the element, so the element can sit next to other elements.
     */
-  display: inline-block;
-  font-size: 1.4rem;
-  border-radius: 10rem;
-  transition: all 0.2s;
-  position: relative;
-}
-.btn--white {
-  color: #070707;
-  background-color: #f7f7f7;
-}
-.btn--white::after {
-  background-color: #f7f7f7;
-}
-.btn:hover {
-  transform: translateY(-0.3rem);
-  /**
+    display: inline-block;
+    font-size: 1.6rem;
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative; }
+  .btn--white {
+    color: #070707;
+    background-color: #f7f7f7; }
+    .btn--white::after {
+      background-color: #f7f7f7; }
+  .btn:hover {
+    transform: translateY(-0.3rem);
+    /**
       * Simply provide the shadow to the specified element.
       * offset-x | offset-y | blur-radius | color(with-less-opasity-is-preffered) 
     */
-  box-shadow: 0px 1rem 2rem rgba(7, 7, 7, 0.2);
-}
-.btn:hover::after {
-  /**
+    box-shadow: 0px 1rem 2rem rgba(7, 7, 7, 0.2); }
+    .btn:hover::after {
+      /**
         * transform: scale(2) : scale will increese the size of the element(to presise the background) with the mentioned number provided inside the scale. in this case its twice the element size.
       */
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
-.btn:active {
-  transform: translateY(-0.1rem);
-  box-shadow: 0px 0.5rem 1rem rgba(7, 7, 7, 0.2);
-}
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  /**
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0px 0.5rem 1rem rgba(7, 7, 7, 0.2); }
+  .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /**
       * For a positioned box, the 'z-index' property specifies the stack level of the box in the current stacking context and whether the box establishes a local stacking context.
     */
-  z-index: -1;
-  transition: all 0.4s;
-}
-.btn--animated {
-  /**
+    z-index: -1;
+    transition: all 0.4s; }
+  .btn--animated {
+    /**
       * Shorthand property combines six of the animation properties into a single property.
       * animation: name duration timing-function delay iteration-count direction fill-mode;
     */
-  animation: moveInBottom 1.5s ease-in 0.75s;
-  /**
+    animation: moveInBottom 1.5s ease-in 0.75s;
+    /**
       * animation-fill-mode: backwards will simply set the 0% animation of that element from the start. So the element will not be visible when it has to be visible only after mentioned secponds(which defined in animation property)
       * Defines what values are applied by the animation outside the time it is executing.
     */
-  animation-fill-mode: backwards;
-}
+    animation-fill-mode: backwards; }
+
+.btn-text:link, .btn-text:visited {
+  font-size: 1.6rem;
+  color: #55c57a;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #55c57a;
+  padding: 3px; }
+
+.btn-text:hover {
+  background-color: #55c57a;
+  color: #f7f7f7;
+  box-shadow: 0 1rem 2rem rgba(7, 7, 7, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.2s; }
+
+.btn-text:active {
+  box-shadow: 0 1rem 2rem rgba(7, 7, 7, 0.2);
+  transform: translateY(0); }
+
+.composition {
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    box-shadow: 0 1.5rem 4rem rgba(7, 7, 7, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all 0.2s;
+    outline-offset: 2rem; }
+    .composition__photo--p1 {
+      left: 0;
+      top: -2rem; }
+    .composition__photo--p2 {
+      right: 0;
+      top: 2rem; }
+    .composition__photo--p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition__photo:hover {
+      outline: 1.5rem solid #55c57a;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(7, 7, 7, 0.5);
+      z-index: 20; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
+
+.feature-box {
+  background-color: rgba(247, 247, 247, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(7, 7, 7, 0.15);
+  transition: transform 0.2s; }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    background-image: linear-gradient(to right, #7ed56f, #28b485);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
+.row {
+  width: 114rem;
+  max-width: 114rem;
+  margin: 0 auto;
+  color: #070707;
+  content: "";
+  display: table;
+  clear: both; }
+  .row:not(:last-chid) {
+    margin-bottom: 8rem; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
 
 .header {
+  height: 95vh;
   /**
       * linear-gradient will give the color top of the image or bacside of the image(depends on it defined in fist or last).
       * We can reduce the opasity of the color to giv ethe shade and provide in which side the color goes like 'to right left', 'to right bottom'
     */
-  background-image: linear-gradient(
-      to right bottom,
-      rgba(178, 255, 255, 0.5),
-      rgba(128, 204, 204, 0.5)
-    ),
-    url("../img/hero.jpg");
-  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
   /**
       * Specifies the size of the background images.
       * what background-size: cover does is that whatever the width of the viewport, or the element, it'll always try to fit the element inside of the box.
@@ -243,21 +342,36 @@ body {
       * Note: you can add more and more check points, the checkpoints will go clock wise.
       * Use this generate the clip-paths: polygon https://bennettfeely.com/clippy/
     */
-  clip-path: polygon(0 0, 100% 0%, 100% 75%, 0% 100%);
-  position: relative;
-}
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
-.header__logo {
-  height: 3.5rem;
-}
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh; }
+
+.section-features {
+  padding: 20rem 0;
+  margin-top: -12vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/nat-4.jpg");
+  background-size: cover;
+  /**
+    * These below two line will give the wide style of the screeen with the regular childrens.
+    * 1st transform: skewY(-7deg) will make the total section-feature to wide style (it will make the inside child wide skewY as well).
+    * Since it will wide the children too, we need to reverse them to see the proper components. we can reverse them by using the same value with posiive (+) number. (-7 means +7)
+  */
+  transform: skewY(-7deg); }
+  .section-features > * {
+    transform: skewY(7deg); }

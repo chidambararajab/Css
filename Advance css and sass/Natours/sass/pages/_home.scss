@@ -1,0 +1,27 @@
+.section-about {
+  background-color: $color-primary-white;
+  padding: 25rem 0;
+  margin-top: -20vh;
+}
+
+.section-features {
+  padding: 20rem 0;
+  margin-top: -12vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)
+    ),
+    url("../img/nat-4.jpg");
+  background-size: cover;
+
+  /**
+    * These below two line will give the wide style of the screeen with the regular childrens.
+    * 1st transform: skewY(-7deg) will make the total section-feature to wide style (it will make the inside child wide skewY as well).
+    * Since it will wide the children too, we need to reverse them to see the proper components. we can reverse them by using the same value with posiive (+) number. (-7 means +7)
+  */
+  transform: skewY(-7deg);
+  & > * {
+    transform: skewY(7deg);
+  }
+}
