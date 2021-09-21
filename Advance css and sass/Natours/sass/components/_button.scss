@@ -27,6 +27,15 @@
     }
   }
 
+  &--green {
+    color: $color-primary-white;
+    background-color: $color-primary-light;
+
+    &::after {
+      background-color: $color-primary-light;
+    }
+  }
+
   &:hover {
     transform: translateY(-0.3rem);
     /**

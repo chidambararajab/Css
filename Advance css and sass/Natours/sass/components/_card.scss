@@ -90,7 +90,7 @@
           $color-primary-light,
           $color-primary-dark
         ),
-        url(../img/nat-5.jpg);
+        url(../img/nat-6.jpg);
     }
 
     &--3 {
@@ -99,7 +99,7 @@
           $color-tertiary-light,
           $color-tertiary-dark
         ),
-        url(../img/nat-5.jpg);
+        url(../img/nat-7.jpg);
     }
   }
   &__heading {
@@ -114,7 +114,8 @@
   }
 
   &__heading-span {
-    padding: 0.4rem 1.5rem;
+    padding: 0.4rem 0.6rem;
+    text-transform: uppercase;
     /**
       * box-decoration-break: clone This will give spacing for before and after(for the braked single headile because of enough width)
       -webkit-box-decoration-break: clone webkit need to added for the chrome version to supporth this property(feature)
@@ -126,6 +127,22 @@
         to right bottom,
         rgba($color-secondary-light, 0.85),
         rgba($color-secondary-dark, 0.85)
+      );
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-light, 0.85),
+        rgba($color-primary-dark, 0.85)
+      );
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-tertiary-light, 0.85),
+        rgba($color-tertiary-dark, 0.85)
       );
     }
   }
@@ -147,5 +164,30 @@
         }
       }
     }
+  }
+
+  // Back Side Styling
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &__price-box {
+    color: $color-primary-white;
+    margin-bottom: 8rem;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 200;
   }
 }

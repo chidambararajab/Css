@@ -151,9 +151,6 @@ body {
 .u-center-text {
   text-align: center; }
 
-.u-margin-bottom-8 {
-  margin-bottom: 8rem; }
-
 .u-margin-bottom-small {
   margin-bottom: 1.5rem; }
 
@@ -162,6 +159,21 @@ body {
 
 .u-margin-bottom-big {
   margin-bottom: 8rem; }
+
+.u-margin-bottom-huge {
+  margin-bottom: 10rem; }
+
+.u-margin-top-small {
+  margin-top: 1.5rem; }
+
+.u-margin-top-medium {
+  margin-top: 4rem; }
+
+.u-margin-top-big {
+  margin-top: 8rem; }
+
+.u-margin-top-huge {
+  margin-top: 10rem; }
 
 .btn {
   /**
@@ -185,6 +197,11 @@ body {
     background-color: #f7f7f7; }
     .btn--white::after {
       background-color: #f7f7f7; }
+  .btn--green {
+    color: #f7f7f7;
+    background-color: #7ed56f; }
+    .btn--green::after {
+      background-color: #7ed56f; }
   .btn:hover {
     transform: translateY(-0.3rem);
     /**
@@ -294,9 +311,9 @@ body {
     .card__picture--1 {
       background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg); }
     .card__picture--2 {
-      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-5.jpg); }
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg); }
     .card__picture--3 {
-      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-5.jpg); }
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg); }
   .card__heading {
     font-size: 2.8rem;
     font-weight: 300;
@@ -307,7 +324,8 @@ body {
     right: 10%;
     width: 50%; }
   .card__heading-span {
-    padding: 0.4rem 1.5rem;
+    padding: 0.4rem 0.6rem;
+    text-transform: uppercase;
     /**
       * box-decoration-break: clone This will give spacing for before and after(for the braked single headile because of enough width)
       -webkit-box-decoration-break: clone webkit need to added for the chrome version to supporth this property(feature)
@@ -316,6 +334,10 @@ body {
     box-decoration-break: clone; }
     .card__heading-span--1 {
       background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+    .card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.85), rgba(40, 180, 133, 0.85)); }
+    .card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
   .card__details {
     padding: 3rem; }
     .card__details ul {
@@ -328,6 +350,22 @@ body {
         padding: 1rem; }
         .card__details ul li:not(:last-child) {
           border-bottom: 1px solid #eee; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; }
+  .card__price-box {
+    color: #f7f7f7;
+    margin-bottom: 8rem; }
+  .card__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .card__price-value {
+    font-size: 6rem;
+    font-weight: 200; }
 
 .composition {
   position: relative; }
@@ -374,6 +412,30 @@ body {
     color: transparent; }
   .feature-box:hover {
     transform: translateY(-1.5rem) scale(1.03); }
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(7, 7, 7, 0.1);
+  background-color: #f7f7f7;
+  border-radius: 3px;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg); }
+  .story__shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg); }
+  .story__img {
+    height: 100%; }
+  .story__text {
+    transform: skewX(12deg); }
 
 .row {
   width: 114rem;
@@ -462,5 +524,9 @@ body {
 
 .section-tours {
   background-color: #f7f7f7;
-  padding: 25rem 0 50rem 0;
+  padding: 25rem 0 15rem 0;
   margin-top: -12vh; }
+
+.section-stories {
+  padding: 15rem 0;
+  background-color: #eee; }
