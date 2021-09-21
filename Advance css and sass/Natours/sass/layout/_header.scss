@@ -4,7 +4,7 @@
   /**
       * linear-gradient will give the color top of the image or bacside of the image(depends on it defined in fist or last).
       * We can reduce the opasity of the color to giv ethe shade and provide in which side the color goes like 'to right left', 'to right bottom'
-    */
+     */
   background-image: linear-gradient(
       to right bottom,
       rgba($color-primary-light, 0.8),
@@ -14,12 +14,12 @@
   /**
       * Specifies the size of the background images.
       * what background-size: cover does is that whatever the width of the viewport, or the element, it'll always try to fit the element inside of the box.
-    */
+     */
   background-size: cover;
   /**
       * Specifies the initial position of the background image(s) (after any resizing) within their corresponding background positioning area
       * what background-position: top does is the top of the image will always stick, when the browser size is shrinked. we can shange the position to bottom, left, right, center, top as well.
-    */
+     */
   background-position: top;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /**
@@ -27,7 +27,7 @@
       * Syntax: clip-path: polygon(leftTop(x y), leftBottom(x y), rightBottom(x y), rightTop(x y))
       * Note: you can add more and more check points, the checkpoints will go clock wise.
       * Use this generate the clip-paths: polygon https://bennettfeely.com/clippy/
-    */
+     */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
 

@@ -1,0 +1,19 @@
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.15;
+
+  &__content {
+    height: 100%;
+    width: 100%;
+    /**
+      * Specifies how the contents of a replaced element should be scaled relative to the box established by its used height and width.
+      * use case: it can be used to make a background video to fit the section.
+    */
+    object-fit: cover;
+  }
+}
