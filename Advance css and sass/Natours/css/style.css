@@ -187,6 +187,10 @@ body {
   .bg-video__content {
     height: 100%;
     width: 100%;
+    /**
+      * Specifies how the contents of a replaced element should be scaled relative to the box established by its used height and width.
+      * use case: it can be used to make a background video to fit the section.
+    */
     object-fit: cover; }
 
 .btn {
