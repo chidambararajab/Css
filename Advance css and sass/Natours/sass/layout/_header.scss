@@ -21,6 +21,7 @@
       * what background-position: top does is the top of the image will always stick, when the browser size is shrinked. we can shange the position to bottom, left, right, center, top as well.
     */
   background-position: top;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /**
       * clip-path will helps to add the shape or crop the display image or background using the x y corordinates
       * Syntax: clip-path: polygon(leftTop(x y), leftBottom(x y), rightBottom(x y), rightTop(x y))

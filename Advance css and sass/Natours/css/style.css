@@ -246,6 +246,89 @@ body {
   box-shadow: 0 1rem 2rem rgba(7, 7, 7, 0.2);
   transform: translateY(0); }
 
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem; }
+  .card__side {
+    height: 50rem;
+    transition: all 1.5s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /**
+      * backface-visibility: hidden; will hide the back side(mirror side ) of the card--front and card--back components.
+    */
+    backface-visibility: hidden;
+    border-radius: 3px;
+    /**
+      * If a child element overfloe the parent, it will be hidden. 
+      * For example, when user add image in the child, the border-radius in parent will be no longer have rounded corders because of overflown image. 
+      * We can use this overflow: hiden property to hide everything which goes outside of the parent.
+      * Shorthand for setting 'overflow-x' and 'overflow-y'.
+    */
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(7, 7, 7, 0.15); }
+    .card__side--front {
+      background-color: white; }
+    .card__side--back {
+      transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+  .card__picture {
+    height: 40%;
+    background-size: cover;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg); }
+    .card__picture--2 {
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-5.jpg); }
+    .card__picture--3 {
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-5.jpg); }
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: #f7f7f7;
+    text-align: right;
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    width: 50%; }
+  .card__heading-span {
+    padding: 0.4rem 1.5rem;
+    /**
+      * box-decoration-break: clone This will give spacing for before and after(for the braked single headile because of enough width)
+      -webkit-box-decoration-break: clone webkit need to added for the chrome version to supporth this property(feature)
+    */
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+  .card__details {
+    padding: 3rem; }
+    .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 1px solid #eee; }
+
 .composition {
   position: relative; }
   .composition__photo {
@@ -336,6 +419,7 @@ body {
       * what background-position: top does is the top of the image will always stick, when the browser size is shrinked. we can shange the position to bottom, left, right, center, top as well.
     */
   background-position: top;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /**
       * clip-path will helps to add the shape or crop the display image or background using the x y corordinates
       * Syntax: clip-path: polygon(leftTop(x y), leftBottom(x y), rightBottom(x y), rightTop(x y))
@@ -375,3 +459,8 @@ body {
   transform: skewY(-7deg); }
   .section-features > * {
     transform: skewY(7deg); }
+
+.section-tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 50rem 0;
+  margin-top: -12vh; }
