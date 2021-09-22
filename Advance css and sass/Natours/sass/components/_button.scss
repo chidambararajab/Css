@@ -1,7 +1,9 @@
 .btn {
   /**
     * Reason why we style bot link and visited link: if we don't style a link at all, it will appear blue in the beginning and then once we click on it once, when we see it again, then it will be purple.
+    * Note: button tag does not have sudo classes like :link and :visited. so, we need to  use &(the class itself too) to give the properties to button tag.
   */
+  &,
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -16,6 +18,10 @@
     border-radius: 10rem;
     transition: all 0.2s;
     position: relative;
+
+    // Changes for button tag
+    border: none;
+    cursor: pointer;
   }
 
   &--white {
@@ -53,7 +59,9 @@
     }
   }
 
-  &:active {
+  &:active,
+  &:focus {
+    outline: none;
     transform: translateY(-0.1rem);
     box-shadow: 0px 0.5rem 1rem rgba($color-primary-black, 0.2);
   }
