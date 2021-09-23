@@ -1,0 +1,152 @@
+.navigation {
+  &__checkbox {
+    display: none;
+  }
+
+  &__button {
+    z-index: 300;
+    height: 7rem;
+    width: 7rem;
+    background-color: $color-primary-white;
+    border-radius: 50%;
+    position: fixed;
+    top: 6rem;
+    right: 6rem;
+    box-shadow: 0 1rem 3rem rgba($color-primary-black, 0.4);
+    text-align: center;
+
+    cursor: pointer;
+  }
+
+  &__background {
+    z-index: 100;
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    /**
+      * background-image: radial-gradient
+      * linear-gradient will gradient the element from one direction to another direction.
+      * radial-gradient will start the gradient from center of the element(or page).
+    */
+    background-image: radial-gradient(
+      $color-primary-light,
+      $color-primary-dark
+    );
+
+    /**
+      * the below code will transition the transform property(when is mention when the burgger button is clicked or active). it will give the animation instead of scalling it normally.
+    */
+    transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+  &__nav {
+    z-index: 200;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    /**
+      * Opacity 0 will invisible the component but the links and component will be there, so solving this problem we can assign with to 0% that will hide the total component.
+    */
+    opacity: 0;
+    width: 0;
+
+    /**
+      * The cubic-bezier() function defines a Cubic Bezier curve.
+      * cubic-bezier will give the animation effect to the transition properties[elements]
+    */
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  &__list {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+  }
+
+  &__item {
+    margin: 1rem 0;
+    transition: all 0.2s;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: 300;
+      color: $color-primary-white;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 0.5rem 1rem;
+      background-image: linear-gradient(
+        120deg,
+        transparent 0%,
+        transparent 50%,
+        $color-primary-white 50%
+      );
+      background-size: 240%;
+      transition: all 0.4s;
+    }
+
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: $color-primary-dark;
+      transform: translateX(1rem);
+    }
+
+    span {
+      display: inline-block;
+      margin-right: 1.5rem;
+    }
+  }
+
+  // Toggle Functionality
+  &__checkbox:checked ~ &__background {
+    transform: scale(80);
+  }
+
+  &__checkbox:checked ~ &__nav {
+    width: 100%;
+    opacity: 1;
+  }
+
+  // Burger Icon
+  &__icon {
+    position: relative;
+    margin-top: 3.5rem;
+    margin-left: 1.9rem; // Remove tjis once figgered out, why the text align property in &__button is not working.
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      display: inline-block;
+      background-color: $color-primary-black;
+    }
+
+    &,
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      top: -0.8rem;
+    }
+    &::after {
+      top: 0.8rem;
+    }
+  }
+}
