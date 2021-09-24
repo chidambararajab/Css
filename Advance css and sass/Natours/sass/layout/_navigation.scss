@@ -123,23 +123,22 @@
   &__icon {
     position: relative;
     margin-top: 3.5rem;
-    margin-left: 1.9rem; // Remove tjis once figgered out, why the text align property in &__button is not working.
 
     &,
     &::before,
     &::after {
       width: 3rem;
       height: 2px;
-      display: inline-block;
       background-color: $color-primary-black;
+      display: inline-block;
     }
 
-    &,
     &::before,
     &::after {
       content: "";
       position: absolute;
       left: 0;
+      transition: all 5s;
     }
 
     &::before {
@@ -148,5 +147,25 @@
     &::after {
       top: 0.8rem;
     }
+  }
+
+  &__button:hover &__icon::before {
+    top: -0.9rem;
+  }
+
+  &__button:hover &__icon::after {
+    top: 0.9rem;
+  }
+
+  &__checkbox:checked + &__button &__icon {
+    background-color: transparent;
+  }
+  &__checkbox:checked + &__button &__icon::before {
+    top: 0;
+    transform: rotate(135deg);
+  }
+  &__checkbox:checked + &__button &__icon::after {
+    top: 0;
+    transform: rotate(-135deg);
   }
 }
