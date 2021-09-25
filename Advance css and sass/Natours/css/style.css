@@ -536,20 +536,6 @@ body {
   /**
     * popup:target will wait for the url to change to popup, when it does the mention css inside the :target sudo class will be aplied
   */ }
-  .popup:target {
-    opacity: 1;
-    visibility: visible; }
-  .popup__close:link, .popup__close:visited {
-    color: #999;
-    position: absolute;
-    top: 2.5rem;
-    right: 2.5rem;
-    font-size: 4rem;
-    text-decoration: none;
-    line-height: 1;
-    display: block; }
-    .popup__close:link:hover, .popup__close:visited:hover {
-      color: #28b485; }
   .popup__content {
     display: table;
     position: absolute;
@@ -560,7 +546,10 @@ body {
     box-shadow: 0 2rem 4rem rgba(7, 7, 7, 0.7);
     background-color: #f7f7f7;
     border-radius: 5px;
-    overflow: hidden; }
+    overflow: hidden;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25);
+    transition: all 0.4s 0.2s; }
   .popup__left {
     display: table-cell;
     width: 33.33%; }
@@ -603,6 +592,23 @@ body {
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto; }
+  .popup:target {
+    opacity: 1;
+    visibility: visible; }
+  .popup:target .popup__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); }
+  .popup__close:link, .popup__close:visited {
+    color: #999;
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    font-size: 4rem;
+    text-decoration: none;
+    line-height: 1;
+    display: block; }
+  .popup__close:hover {
+    color: #28b485; }
 
 .story {
   width: 75%;
