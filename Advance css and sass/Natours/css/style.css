@@ -1,4 +1,19 @@
 @charset "UTF-8";
+/**
+  * 0 - 600px:          Phone
+  * 600px - 900px:      Tablet portrait
+  * 900px - 1200px:     Tablet landscape
+  * [1200px - 1800px] is where our normal(desktop first) style applies
+  * 1800 + px:          Big Desktop
+  * ------------------------------------------------------------------
+  * $breakpoint arguement choices:
+  * phone
+  * tab-port
+  * tab-land
+  * big-desk
+  *
+  * ORDER: Base + typography > general layout + grid > page layout > components
+*/
 /*
 COLORS:
 
@@ -65,6 +80,25 @@ html {
     * Note: rem is not supported in older version if Internet Explorer.
   */
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 43.75%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+body {
+  /**
+    * Box model change to the border-box, so that the borders and the paddings are no longer addedto the total width or the total height
+  */
+  box-sizing: border-box;
+  padding: 3rem; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 body {
   /**
@@ -77,12 +111,7 @@ body {
     * (pre-defined line hight * 1.7)
   */
   line-height: 1.7;
-  color: #f7f7f7;
-  padding: 3rem;
-  /**
-    * Box model change to the border-box, so that the borders and the paddings are no longer addedto the total width or the total height
-  */
-  box-sizing: border-box; }
+  color: #f7f7f7; }
 
 .heading-primary {
   text-transform: uppercase;
@@ -113,16 +142,23 @@ body {
       * Defines the number of times an animation cycle is played. The default value is one, meaning the animation will play from beginning to end once.
     */
     /* animation-iteration-count: 3; */ }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 1rem;
+        font-size: 5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 3rem;
+    letter-spacing: 1.75rem;
     /**
       * Shorthand property combines six of the animation properties into a single property.
       * animation: name duration timing-function delay iteration-count direction fill-mode;
     */
     animation: moveInRight 1.5s ease-in; }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: 0.5rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;

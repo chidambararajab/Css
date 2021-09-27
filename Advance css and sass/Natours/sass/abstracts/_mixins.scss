@@ -22,3 +22,46 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+// MEDIA QUERY MANAGER
+/**
+  * 0 - 600px:          Phone
+  * 600px - 900px:      Tablet portrait
+  * 900px - 1200px:     Tablet landscape
+  * [1200px - 1800px] is where our normal(desktop first) style applies
+  * 1800 + px:          Big Desktop
+  * ------------------------------------------------------------------
+  * $breakpoint arguement choices:
+  * phone
+  * tab-port
+  * tab-land
+  * big-desk
+  *
+  * ORDER: Base + typography > general layout + grid > page layout > components
+*/
+@mixin responsive($breakpoint) {
+  @if ($breakpoint == phone) {
+    // 600px
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if ($breakpoint == tab-port) {
+    // 900px
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if ($breakpoint == tab-land) {
+    // 1200px
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if ($breakpoint == big-desk) {
+    // 1800px
+    @media (min-width: 112.5em) {
+      @content;
+    }
+  }
+}

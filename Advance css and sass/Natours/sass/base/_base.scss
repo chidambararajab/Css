@@ -20,24 +20,30 @@ html {
     * eg: (10/16)*100 = 62.5
     * Note: rem is not supported in older version if Internet Explorer.
   */
-  font-size: 62.5%;
+  font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
+
+  @include responsive(tab-land) {
+    font-size: 50%; // 1rem = 8px; 8px/16px = 50%
+  }
+
+  @include responsive(tab-port) {
+    font-size: 43.75%; // 1rem = 7px; 7px/16px = 50%
+  }
+
+  @include responsive(big-desk) {
+    font-size: 75%; // 1rem = 12px; 12px/16px = 75%
+  }
 }
 
 body {
   /**
-    * Properties relitaed to font usually inherited. Thats the reason we are declaring the font in body
-  */
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /**
-    * 1.7 in line-height means, It will 1.7 times bigger then the pre-defined line-hight
-    * (pre-defined line hight * 1.7)
-  */
-  line-height: 1.7;
-  color: $color-primary-white;
-  padding: 3rem;
-  /**
     * Box model change to the border-box, so that the borders and the paddings are no longer addedto the total width or the total height
   */
   box-sizing: border-box;
+
+  padding: 3rem;
+
+  @include responsive(tab-port) {
+    padding: 0;
+  }
 }

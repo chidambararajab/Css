@@ -1,3 +1,17 @@
+body {
+  /**
+    * Properties relitaed to font usually inherited. Thats the reason we are declaring the font in body
+  */
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /**
+    * 1.7 in line-height means, It will 1.7 times bigger then the pre-defined line-hight
+    * (pre-defined line hight * 1.7)
+  */
+  line-height: 1.7;
+  color: $color-primary-white;
+}
+
 .heading-primary {
   text-transform: uppercase;
 
@@ -15,6 +29,11 @@
     letter-spacing: 3.5rem;
     animation-name: moveInLeft;
     animation-duration: 1.5s;
+
+    @include responsive(phone) {
+      letter-spacing: 1rem;
+      font-size: 5rem;
+    }
 
     /**
       * animation-timing-function: Describes how the animation will progress over one cycle of its duration.
@@ -38,12 +57,15 @@
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 3rem;
+    letter-spacing: 1.75rem;
     /**
       * Shorthand property combines six of the animation properties into a single property.
       * animation: name duration timing-function delay iteration-count direction fill-mode;
     */
     animation: moveInRight 1.5s ease-in;
+    @include responsive(phone) {
+      letter-spacing: 0.5rem;
+    }
   }
 }
 
