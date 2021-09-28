@@ -14,7 +14,11 @@
   margin-bottom: 4rem !important;
 
   @include responsive(tab-port) {
-    margin-bottom: 4rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  @include responsive(tab-land) {
+    margin-bottom: 1.1rem !important;
   }
 }
 
