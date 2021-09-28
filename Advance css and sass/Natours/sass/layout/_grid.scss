@@ -1,11 +1,23 @@
 .row {
-  width: 114rem;
+  width: 100%;
   max-width: $grid-width;
   margin: 0 auto;
   color: $color-primary-black;
 
   &:not(:last-chid) {
     margin-bottom: $gutter-vertical;
+
+    @include responsive(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
+    @include responsive(phone) {
+      margin-bottom: $gutter-vertical-phone-small;
+    }
+  }
+
+  @include responsive(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
   }
 
   @include clearfix;
@@ -15,6 +27,20 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include responsive(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
+
+      @include responsive(phone) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-phone-small;
+      }
+    }
+
+    @include responsive(tab-port) {
+      width: 100% !important;
     }
   }
 

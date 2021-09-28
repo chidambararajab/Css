@@ -1,5 +1,8 @@
 .header {
   height: 95vh;
+  @include responsive(tab-port) {
+    height: 97vh;
+  }
 
   /**
       * linear-gradient will give the color top of the image or bacside of the image(depends on it defined in fist or last).
@@ -30,6 +33,11 @@
      */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative;
+
+  @include responsive(phone) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
 
   &__logo-box {
     position: absolute;

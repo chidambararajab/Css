@@ -16,6 +16,16 @@
     text-align: center;
 
     cursor: pointer;
+
+    @include responsive(tab-port) {
+      top: 4rem;
+      right: 4rem;
+    }
+
+    @include responsive(phone) {
+      top: 3rem;
+      right: 3rem;
+    }
   }
 
   &__background {
@@ -40,6 +50,16 @@
       * the below code will transition the transform property(when is mention when the burgger button is clicked or active). it will give the animation instead of scalling it normally.
     */
     transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+
+    @include responsive(tab-port) {
+      top: 4.5rem;
+      right: 4.5rem;
+    }
+
+    @include responsive(phone) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
   }
 
   &__nav {
@@ -54,6 +74,7 @@
     */
     opacity: 0;
     width: 0;
+    visibility: hidden;
 
     /**
       * The cubic-bezier() function defines a Cubic Bezier curve.
@@ -94,6 +115,10 @@
       );
       background-size: 240%;
       transition: all 0.4s;
+
+      @include responsive(phone) {
+        font-size: 2.2rem;
+      }
     }
 
     &:hover,
@@ -117,6 +142,7 @@
   &__checkbox:checked ~ &__nav {
     width: 100%;
     opacity: 1;
+    visibility: visible;
   }
 
   // Burger Icon

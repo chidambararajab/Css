@@ -64,6 +64,15 @@
   &__radio-group {
     width: 49%;
     display: inline-block;
+
+    @include responsive(tab-port) {
+      width: 25%;
+    }
+
+    @include responsive(phone) {
+      width: 50%;
+      margin-bottom: 1.5rem;
+    }
   }
 
   &__radio-label {

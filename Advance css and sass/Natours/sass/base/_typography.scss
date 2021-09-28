@@ -77,6 +77,14 @@ body {
   @include text-background-gradient;
   transition: all 0.2s;
 
+  @include responsive(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include responsive(phone) {
+    font-size: 2.5rem;
+  }
+
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba($color-primary-black, 0.2);
