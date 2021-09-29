@@ -913,8 +913,9 @@ body {
   /**
       * linear-gradient will give the color top of the image or bacside of the image(depends on it defined in fist or last).
       * We can reduce the opasity of the color to giv ethe shade and provide in which side the color goes like 'to right left', 'to right bottom'
+      * Note usually we pass the small image, them we will check and pass the high resolution image for high resolution displays. (phones are also consider as high resolution image so, we need to check on the condition as well)
      */
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero-small.jpg");
   /**
       * Specifies the size of the background images.
       * what background-size: cover does is that whatever the width of the viewport, or the element, it'll always try to fit the element inside of the box.
@@ -933,7 +934,13 @@ body {
       * Use this generate the clip-paths: polygon https://bennettfeely.com/clippy/
      */
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative; }
+  position: relative;
+  /**
+      * The below high quality image will be added when the display resolution is high.
+      * (min-resolution: 192dpi) - This will check the resolution of the display.
+      * (min-width: 600px) - Since, mobile phone also follow the high resolution display, we need to check the max-width and pass the low quality image for them.
+      * And we need to pass the 2000px image to the 200px and more sized display. Even that display is not high resolution display.
+    */ }
   @media (max-width: 56.25em) {
     .header {
       height: 97vh; } }
@@ -941,6 +948,12 @@ body {
     .header {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
       clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%); } }
+  @media (min-resolution: 192dpi) and (min-width: 600px) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg"); } }
+  @media (min-width: 2000px) {
+    .header {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg"); } }
   .header__logo-box {
     position: absolute;
     top: 4rem;
