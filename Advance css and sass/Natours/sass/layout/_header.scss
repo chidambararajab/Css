@@ -47,16 +47,7 @@
       * (min-width: 600px) - Since, mobile phone also follow the high resolution display, we need to check the max-width and pass the low quality image for them.
       * And we need to pass the 2000px image to the 200px and more sized display. Even that display is not high resolution display.
     */
-  @media (min-resolution: 192dpi) and (min-width: 600px) {
-    background-image: linear-gradient(
-        to right bottom,
-        rgba($color-primary-light, 0.8),
-        rgba($color-primary-dark, 0.8)
-      ),
-      url("../img/hero.jpg");
-  }
-
-  @media (min-width: 2000px) {
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
     background-image: linear-gradient(
         to right bottom,
         rgba($color-primary-light, 0.8),
