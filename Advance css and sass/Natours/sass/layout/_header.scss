@@ -1,5 +1,5 @@
 .header {
-  height: 95vh;
+  height: 85vh;
   @include responsive(tab-port) {
     height: 97vh;
   }
@@ -26,15 +26,19 @@
       * what background-position: top does is the top of the image will always stick, when the browser size is shrinked. we can shange the position to bottom, left, right, center, top as well.
      */
   background-position: top;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /**
+  position: relative;
+
+  @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    /**
       * clip-path will helps to add the shape or crop the display image or background using the x y corordinates
       * Syntax: clip-path: polygon(leftTop(x y), leftBottom(x y), rightBottom(x y), rightTop(x y))
       * Note: you can add more and more check points, the checkpoints will go clock wise.
       * Use this generate the clip-paths: polygon https://bennettfeely.com/clippy/
      */
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    height: 95vh;
+  }
 
   @include responsive(phone) {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
@@ -47,7 +51,9 @@
       * (min-width: 600px) - Since, mobile phone also follow the high resolution display, we need to check the max-width and pass the low quality image for them.
       * And we need to pass the 2000px image to the 200px and more sized display. Even that display is not high resolution display.
     */
-  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+    (min-width: 125em) {
     background-image: linear-gradient(
         to right bottom,
         rgba($color-primary-light, 0.8),

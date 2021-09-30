@@ -24,14 +24,22 @@
     width: 15rem;
     height: 15rem;
     float: left;
-    -webkit-shape-outside: circle(50% at 50% 50%);
-    shape-outside: circle(50% at 50% 50%);
-
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
-
     position: relative;
+
+    overflow: hidden;
+    border-radius: 50%;
+
+    /**
+      * The CSS @supports rule specifies a support condition for feature support on a browser, i.e. a specific CSS style property can be specified as a condition to check for its support on the browser and if the condition is true then the block of code is executed else not. It is a CSS conditional rule and comes under CSS at-rule.
+    */
+    @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+      border-radius: none;
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      shape-outside: circle(50% at 50% 50%);
+      -webkit-clip-path: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+    }
 
     @include responsive(phone) {
       transform: translateX(-3rem) skew(0);
