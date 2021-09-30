@@ -192,7 +192,10 @@
   }
 
   // MEDIA QUERY
-  @include responsive(tab-port) {
+  /**
+    * only screen and (hover: none) will app the mentioned css when it has no hover optien in the device(phone, tablet and others)
+  */
+  @media only screen and (max-width: 56.25em), only screen and (hover: none) {
     height: auto;
     border-radius: 3px;
     background-color: white;
